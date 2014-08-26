@@ -44,7 +44,7 @@ def setViewBox(x, y, width, height):
 # setting up the header
 def writeHeader():
   xmltag = '<?xml version="1.0" encoding="UTF-8"?>'
-  svgtag = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="full" width="%s" height="%s" viewBox="%s">' % (svgWidth, svgHeight, svgViewBox)
+  svgtag = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="full" width="%s" height="%s" viewBox="%s">' %(svgWidth, svgHeight, svgViewBox)
   return xmltag + "\n" + svgtag
 
 def writeEnd():
@@ -52,15 +52,33 @@ def writeEnd():
 
 
 
-# methods for drawing things ...
+# methods for drawing shapes ...
+
+# circle
+def circle(cx, cy, r):
+  return '<circle cx="%s" cy="%s" r="%s"/>' %(cx, cy, r)
+
+# ellipse
+def ellipse(cx, cy, rx, ry):
+  return '<ellipse cx="%s" cy="%s" rx="%s" ry="%s"/>' %(cx, cy, rx, ry)
 
 # line
 def line(x1,y1,x2,y2):
-  return '<line x1="%s" y1="%s" x2="%s" y2="%s" stroke="%s" stroke-width="%s" />' % (x1,y1,x2,y2,strokeColor,strokeWidth)
+  return '<line x1="%s" y1="%s" x2="%s" y2="%s" stroke="%s" stroke-width="%s" />' %(x1,y1,x2,y2,strokeColor,strokeWidth) # remove stroke and fill???
+
+# polygon
+def polygon(points):
+  output = ''
+  for i in range(len(points)):
+  
+  return output
 
 # rectangle
 def rectangle(x,y,width,height):
-  return '<rect x="%s" y="%s" width="%s" height="%s" fill="%s" stroke="%s" stroke-width="%s"/>' % (x,y,width,height,fillColor,strokeColor,strokeWidth)
+  return '<rect x="%s" y="%s" width="%s" height="%s" fill="%s" stroke="%s" stroke-width="%s"/>' %(x,y,width,height,fillColor,strokeColor,strokeWidth) # remove stroke and fill??
+
+# 
+
 
 
 
